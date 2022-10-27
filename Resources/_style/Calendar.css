@@ -7,7 +7,10 @@
 }
 
 /* ---------- DEFININDO CORES ---------- */
-.Calendario, .Calendario > header, .Calendario > table, .Calendario a:visited, .Calendario a:-webkit-any-link{
+.Calendario, 
+.Calendario > header, 
+.Calendario > table, 
+.Calendario a:visited, .Calendario a:-webkit-any-link, .Calendario nav button{
   color: var(--cor1);
 }
 .Calendario{
@@ -21,6 +24,9 @@
 }
 .today{
   background-color: var(--cor1mf);
+}
+.Calendario nav button{
+  background-color: transparent;
 }
 /* ---------- DEFININDO CORES ---------- */
 
@@ -37,9 +43,18 @@
 .Calendario > header > h2{
   margin-bottom: -5px;
 }
-.Calendario > header > nav{
+.Calendario nav form{
   display: flex;
   justify-content: space-around;
+}
+.Calendario nav input{
+  
+}
+.Calendario nav button{
+  border: none;
+  font-famly: serif;
+  text-decoration: underline;
+  font-weight: 800;
 }
 /* ---------- HEADER ---------- */
 
@@ -49,6 +64,9 @@
   border-radius: 30px 30px 0px 0px;
   margin-left: auto;
   margin-right: auto;
+}
+#Calendario{
+  margin-bottom: 30px;
 }
 /* ---------- TABLE ---------- */
 
@@ -97,7 +115,7 @@
   .Calendario > header > h1{
     font-size: 2em;
   }
-  .Calendario > header > a{
+  .Calendario > header > a, .Calendario nav button{
     font-size: 1em;
   }
   .Calendario thead th{
@@ -129,7 +147,7 @@
   .Calendario > header > h1{
     font-size: 2.1em;
   }
-  .Calendario > header > a{
+  .Calendario > header > a, .Calendario nav button{
     font-size: 1.2em;
   }
   .Calendario thead th{
@@ -157,7 +175,7 @@
   .Calendario > header > h1{
     font-size: 2.3em;
   }
-  .Calendario > header > a{
+  .Calendario > header > a, .Calendario nav button{
     font-size: 1.4em;
   }
   .Calendario thead th{
@@ -185,7 +203,7 @@
   .Calendario > header > h1{
     font-size: 2.5em;
   }
-  .Calendario > header > a{
+  .Calendario > header > a, .Calendario nav button{
     font-size: 1.6em;
   }
   .Calendario thead th{

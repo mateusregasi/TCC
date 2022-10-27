@@ -15,6 +15,11 @@ $router->get("/calendario", [
                return new Response(200, CalendarPage::get());
              }
 ]);
+$router->post("/calendario", [
+             function($request){
+               return new Response(200, CalendarPage::get($request));
+             }
+]);
 $router->get("/login", [
              function(){
                return new Response(200, Login::getLogin());

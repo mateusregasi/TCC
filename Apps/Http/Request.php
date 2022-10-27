@@ -26,6 +26,6 @@ class Request{
     return $this->httpMethod;
   }
   function getPostVars(){
-    return $this->httpMethod;
+    return $this->postVars;
   }
 }

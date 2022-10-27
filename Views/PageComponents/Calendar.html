@@ -1,10 +1,13 @@
-<div class="Calendario">
+<!--Deixei um tutorial lá em BD-->
+<div class="Calendario"> 
   <header>
     <h1>Calendário</h1>
     <h2>{{month}}</h2>
     <nav>
-      <a href="{{prev}}">Anterior</a>
-      <a href="{{next}}">Proximo</a>
+      <form action="{{calendario-url}}" method="post">
+        <button type="submit" name="prev" value="{{prev}}">Anterior</button>
+        <button type="submit" name="next" value="{{next}}">Proximo</button>
+      </form>
     </nav>
   </header>
   <table>

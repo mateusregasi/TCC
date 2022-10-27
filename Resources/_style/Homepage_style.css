@@ -212,6 +212,7 @@ main > footer{
     width: 700px;
     padding-top: 20px;
     margin-bottom: 20px;
+    padding-top: 20px;
   }
   p.texto{
     font-size: 1.4em;
@@ -234,6 +235,7 @@ main > footer{
     width: 900px;
     padding-top: 25px;
     margin-bottom: 25px;
+    padding-top: 25px;
   }
   p.texto{
     font-size: 1.6em;
@@ -256,6 +258,7 @@ main > footer{
     width: 1150px;
     padding-top: 30px;
     margin-bottom: 30px;
+    padding-top: 30px;
   }
   p.texto{
     font-size: 1.6em;
