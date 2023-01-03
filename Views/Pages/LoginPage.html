@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Login</title>
+      <link rel="stylesheet" href="../../Resources/_style/LoginPage.css">
+</head>
+  </head>
+  <body>
+      {{navbar}}
+      <main>
+        <form target="_self" action="{{home-url}}/login" method="POST" autocomplete="on">
+            <fieldset class="caixa_form">
+                <h1>Login</h1>
+                <div class="Campo">
+                  <label for="email">E-mail: </label>
+                  <input class="campo" type="email" id="email" name="email">
+                </div>
+                <div class="Campo">
+                  <label for="senha">Senha: </label>
+                  <input class="campo" type="password" id="senha" name="senha">
+                </div>
+                  {{error-message}}
+                <input class="enviar" type="submit" value="ENTRAR">
+
+                <h2>Não está registrado?<a href="#faleadm" target="_blank">Fale com a administração</a></h2>
+            </fieldset>
+        </form>
+      </main>
+      {{footer}}
+  </body>
+</html>

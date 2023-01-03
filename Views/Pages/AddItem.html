@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+  <html lang="pt-br">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/Resources/_style/AddItem.css" rel="stylesheet" type="text/css">
+    <title>Adicionar item</title>
+  </head>
+  <body>
+    
+    {{navbar}}
+
+    <main>
+      <article>
+        <h1>Adicionar item no estoque</h1>
+      </article>
+      <form action="#" method="post">
+        <fieldset>
+          <h1>Adicionar item</h1>
+          <label for="nome">Nome:</label>
+          <input type="text" id="nome" name="nome"><br>
+          <label for="categoria">Categoria:</label>
+          <select id="categoria" ></select><br>
+          <label for="quantidade" nome= "quantidade">Quantidade:</label>
+          <input type="number" id="quantidade" name="quantidade">
+          <label for="Unidade de medida" >Unidade de medida:</label>
+          <select id="unimed" nome="unidade de medida"></select><br>
+          <label for="Data chegada"> Data de Chegada:</label>
+          <input type="date" id="data" name="data"><br>
+          <label for="Data validade">Data de Validade:</label>
+          <input type="date" id="validade" name="validade"><br>
+          <input type="submit" id="adicionar" name="adicionar" value="Adicionar">
+        </fieldset>
+        <button>Visualizar Estoque</button> 
+      </form>
+    </main>
+    
+    {{footer}}
+    
+  </body>
+  </html>

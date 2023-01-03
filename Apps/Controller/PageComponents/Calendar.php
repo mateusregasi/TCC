@@ -1,7 +1,7 @@
 <?php
 
-require_once __DIR__ . "/../../View.php";
-require_once __DIR__ . "/../../Valida.php";
+require_once __DIR__ . "/../../Utils/View.php";
+require_once __DIR__ . "/../../Utils/Validate.php";
 
 class Calendar{
   private static $month;
@@ -57,5 +57,3 @@ class Calendar{
     ]);
   }
 }
-
-/**/

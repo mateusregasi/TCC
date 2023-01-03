@@ -1,0 +1,192 @@
+@import '_components/Main.css';
+@import '_components/Title.css';
+@import '_components/Pattern.css';
+@import '_components/Footer.css';
+@import '_components/Navbar.css';
+@import '_components/Button.css';
+@import '_components/Text.css';
+
+
+/* --------------- gerais -------------- */
+body{
+  margin: 0px;
+  padding: 0px;
+}
+img{
+  width: 100%;
+}
+
+/* --------------- índice -------------- */
+#indice ul a{
+  font-family: var(--adventfont);
+  font-weight: 700;
+  text-align: justify;
+  text-indent: 60px;
+  text-decoration:none;
+  color: var(--cor1);
+}
+#indice ul a:hover{
+  color: var(--cor1mc);
+}
+#indice ul a:active{
+  color: var(--cor1mmc);
+}
+#indice ul{
+  margin: 0;
+}
+#indice ul li{
+  margin: 0 0 10px 0;
+}
+#indice ul li:last-of-type{
+  margin: 0;
+}
+
+
+
+/* 
+a.tabe:active{
+  color: var(--cor1);
+}
+li.list{
+  list-style-position: outside;
+  margin-bottom: 25px;
+}
+*/
+
+main section.col2{
+  display: flex;
+  margin: 0 5% 30px 5%;
+  gap: 5%;
+  flex-wrap: wrap;
+}
+main section.col2:last-of-type{
+  margin: 0 5% 0 5%;
+}
+main section.col2 section{
+  flex-basis: 46%;
+  flex-grow: 1;
+  margin-bottom: 30px;
+}
+main section.col2 section:last-of-type{
+  margin: 0;
+}
+main section.col2 > *:not(section){
+  flex-grow: 2;
+}
+
+
+/* --------------- algum problema? -------------- */
+main > footer > a:-webkit-any-link, 
+main > footer{
+  font-family: var(--adventfont);
+  color: var(--cor2);
+}
+main > footer{
+  background-color: rgba(0, 0, 0, 0.5);
+  flex-direction: column;
+  text-align: center;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  font-size: 1.4em;
+}
+
+/* --------------- contatos -------------- */
+#contacts{
+  background-color: var(--cor1mmc);
+  color: var(--cor2);
+}
+#contacts > p{
+  text-align: center;
+  font-family: var(--muktafont);
+  font-weight: 800;
+}
+#contacts > ul{
+  list-style: none;
+  font-family: var(--adventfont);
+}
+#contacts > ul > li{
+  padding-bottom: 15px;
+}
+
+
+/* ---------- MAIN ---------- */
+
+
+@media only screen and (max-width: 767px){
+  #indice ul li{
+    font-size: 1.5em;
+  }
+  main > article > section{
+    flex-direction: column;
+  }
+  main section.col2 section{
+/*     margin-bottom: 15px; */
+  }
+  #contacts > p{
+    font-size: 1.5em;
+  }
+  #contacts > ul{
+    font-size: 1.2em;
+  }
+}
+
+
+@media only screen and (min-width: 768px) and (max-width: 991px){
+  #indice ul{
+    font-size: 1.4em;
+  }
+  .fotos{
+    height:16.7em;
+  }
+  #contacts{
+    margin-bottom: -20px;
+  }
+  #contacts > p{
+    font-size: 1.5em;
+  }
+  #contacts > ul{
+    font-size: 1.2em;
+  }
+}
+
+
+@media only screen and (min-width: 992px) and (max-width: 1199px){
+  #indice ul{
+    font-size: 1.5em;
+  }
+  .fotos{
+    height:18em;
+  }
+  #contacts{
+    margin-bottom: -25px;
+  }
+  #contacts > p{
+    font-size: 1.6em;
+  }
+  #contacts > ul{
+    font-size: 1.3em;
+  }
+}
+
+
+@media only screen and (min-width: 1200px){
+  #indice ul{
+    font-size: 1.5em;
+  }
+  main > article > section > section{
+    width: 46%;
+  }
+  .fotos{
+    height:23em;
+  }
+  #contacts{
+    margin-bottom: -30px;
+  }
+  #contacts > p{
+    font-size: 1.8em;
+  }
+  #contacts > ul{
+    font-size: 1.4em;
+  }
+}

@@ -1,6 +1,5 @@
 <?
-
-require_once __DIR__ . "/../../View.php";
+require_once __DIR__ . "/../../Utils/View.php";
 require_once __DIR__ . "/../PageComponents/Calendar.php";
 
 class CalendarPage{
@@ -11,4 +10,4 @@ class CalendarPage{
                         "footer" => View::render("Footer")
     ]);
   }
-} /* Por algum motivo o atributo estático tá sumindo */
+}

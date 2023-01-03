@@ -1,0 +1,188 @@
+@import 'Pattern.css';
+
+body > header{
+  background-color: var(--cor3);
+  display: flex;
+  padding: 0 30px;
+  align-items: center;
+  justify-content: space-between;
+}
+#navegator{
+  display: flex;
+  height: 100%;
+}
+#navegator > input{
+  display: none;
+}
+#navegator > label{
+  cursor: pointer;
+  display: none;
+}
+#nav-dropdown-content{
+  justify-contents: right;
+  display: flex;
+  align-items: center;
+  align-self: right;
+  gap: 30px;
+  list-style: none;
+  font-family: var(--adventfont);
+  font-weight: 700;
+  font-size: 1.4em;
+}
+#nav-dropdown-content a{
+  text-decoration: none;
+  color: var(--cor2);
+}
+#nav-dropdown-content > ul{
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  display: flex;
+}
+#nav-dropdown-content > ul > li{
+  display: flex;
+  align-items: center;
+}
+#nav-dropdown-content > ul > li {
+}
+#nav-dropdown-content > ul > li:hover{
+  background-color: var(--cor1);
+}
+
+#login-icon{
+  height: 100%;
+}
+#login-icon img{
+  position: relative;
+  top: 50%;
+  transform: translate(0, -50%);
+}
+#login-icon p{
+  display: none;
+}
+
+/* -------------------- QUEBRA 1 -------------------- */
+@media only screen and (max-width: 767px){
+  body > header{
+    flex-direction: column;
+    padding: 0;
+    background-color: transparent;
+  }
+  #logo{
+    display: none;
+  }
+  #navegator{
+    flex-direction: column;
+    width: 100%;
+  }
+  #navegator > label{
+    width: 100%;
+    height: 60px;
+    display: block;
+    align-self: center;
+    background-color: black;
+  }
+  #navegator > label > img{
+    position: relative;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 50px;
+  }
+  #nav-dropdown-content:first{
+    display: none;
+  }
+  #nav-dropdown-content{
+    display: none;
+    flex-direction: column;
+    gap: 0;
+    text-align: center;
+    background-color: black;
+  }
+  #navegator > input:checked ~ #nav-dropdown-content{
+    display: flex;
+    animation: dropdown-down 1s;
+    transition: opacity(1) 1s;
+  }
+  #nav-dropdown-content > ul > li,
+  #nav-dropdown-content aside{
+    width: 100%;
+    padding: 15px 0;
+  }
+  #nav-dropdown-content > ul{
+    width: 100%;
+    flex-direction: column;
+  }
+  #nav-dropdown-content > ul > li{
+    display: block;
+  }
+  #login-icon:hover{
+    background-color: var(--cor1);
+  }
+  #login-icon > a *{
+    display: inline;
+  }
+  #login-icon img{
+    width: 20px;
+    transform: translate(0, 0);
+  }
+}
+
+/* -------------------- QUEBRA 2 -------------------- */
+@media only screen and (min-width: 768px) and (max-width: 991px){
+  body > header{
+    height: 60px;
+  }
+  #logo{
+    width: 100px;
+  }
+  #nav-dropdown-content > ul > li{
+    padding: 0 10px;
+  }
+  #login-icon img{
+    width: 30px;
+  }
+}
+
+/* -------------------- QUEBRA 3 -------------------- */
+@media only screen and (min-width: 992px) and (max-width: 1199px){
+  body > header{
+    height: 70px;
+  }
+  #logo{
+    width: 130px;
+  }
+  #login-icon img{
+    width: 35px;
+  }
+  #nav-dropdown-content > ul > li{
+    padding: 0 8px;
+  }
+}
+
+/* -------------------- QUEBRA 4 -------------------- */
+@media only screen and (min-width: 1200px){
+  body > header{
+    height: 80px;
+  }
+  #logo{
+    width: 150px;
+  }
+  #nav-dropdown-content > ul > li{
+    padding: 0 6px;
+  }
+  #login-icon img{
+    width: 40px;
+  }
+}
+
+@keyframes dropdown-down{
+	from{
+    opacity: 0;
+		transform: translateY(-100%);
+	}
+	to{
+    opacity: 1;
+		transform: translateY(0);
+	}
+}

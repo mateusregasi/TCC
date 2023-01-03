@@ -18,6 +18,8 @@ class Response{
     $this->headers[$key] = $value;
   }
   private function sendHeaders(){
+    
+    # Adiciona os headers da resposta
     http_response_code($this->httpCode);
     foreach($this->headers as $key => $value){
       header("$key: $value");
@@ -32,6 +34,3 @@ class Response{
     }
   }
 }
-
-// Eu escrevi...eu escrevi constructor ao inves de consstruct
-// Eu entendi mais ou menos, mas tô fazendo seguindo o vídeo

@@ -1,18 +1,13 @@
 <?php
 
-require_once __DIR__ . "/Apps/Http/Request.php";
 require_once __DIR__ . "/Apps/Http/Router.php";
-require_once __DIR__ . "/Apps/View.php";
+require_once __DIR__ . '/Bootstrap/Apps.php';
 
-define('URL', 'https://principal-tcc.kaylanelima.repl.co');
-
-View::init([
-           'home-url' => URL,
-           'calendario-url' => URL . "/calendario",
-           'login-url' => URL . "/login"
-]);
-
+# Inicia o router
 $router = new Router(URL);
 
-include __DIR__ . "/Routes/pages.php";
+// # Importa as rotas
+include __DIR__ . "/Routes/Pages.php";
+
+# Envia a resposta do router (imprime HTML na tela)
 $router->run()->sendResponse();
