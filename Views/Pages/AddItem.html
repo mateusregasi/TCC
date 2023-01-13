@@ -12,28 +12,53 @@
     {{navbar}}
 
     <main>
+      
       <article>
-        <h1>Adicionar item no estoque</h1>
+
+        <h1>Adicionar Item</h1>
+        
+        <form action="#" method="post" id="form">
+          <fieldset>
+            <h1>Adicionar item</h1>
+  
+            <div>
+              <label for="nome">Nome:</label>
+              <input type="text" name="nome">
+            </div>
+            
+            <div>
+              <label for="categoria">Categoria:</label>
+              <select id="categoria" ></select>            
+            </div>
+  
+            <div>
+              <label for="quantidade" nome= "quantidade">Quantidade:</label>
+              <input type="number" name="quantidade">
+            </div>            
+  
+            <div>
+              <label for="Unidade de medida" >Unidade de medida:</label>
+              <select nome="unidade de medida"></select>
+            </div>
+  
+            <div>
+              <label for="Data chegada"> Data de Chegada:</label>
+              <input type="date" name="data">
+            </div>
+  
+            <div>
+              <label for="Data validade">Data de Validade:</label>
+              <input type="date" name="validade">
+            </div>
+              
+            <input type="submit" value="Adicionar" class="button_submit">
+            
+          </fieldset>      
+        </form>
+  
+        <a class="button" href='#'>Visualizar Estoque</a> 
       </article>
-      <form action="#" method="post">
-        <fieldset>
-          <h1>Adicionar item</h1>
-          <label for="nome">Nome:</label>
-          <input type="text" id="nome" name="nome"><br>
-          <label for="categoria">Categoria:</label>
-          <select id="categoria" ></select><br>
-          <label for="quantidade" nome= "quantidade">Quantidade:</label>
-          <input type="number" id="quantidade" name="quantidade">
-          <label for="Unidade de medida" >Unidade de medida:</label>
-          <select id="unimed" nome="unidade de medida"></select><br>
-          <label for="Data chegada"> Data de Chegada:</label>
-          <input type="date" id="data" name="data"><br>
-          <label for="Data validade">Data de Validade:</label>
-          <input type="date" id="validade" name="validade"><br>
-          <input type="submit" id="adicionar" name="adicionar" value="Adicionar">
-        </fieldset>
-        <button>Visualizar Estoque</button> 
-      </form>
+      
     </main>
     
     {{footer}}

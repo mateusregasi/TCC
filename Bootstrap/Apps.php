@@ -13,5 +13,6 @@ View::init([
            'calendario-url' => URL . "/calendario",
            'login-url' => URL . "/login",
            'agendamento-url' => URL . "/agendamento",
+           'adicionar-item-url' => '/adicionar-item',
+           'teacher-adms-url' => '/professores-administradores'
 ]);
-

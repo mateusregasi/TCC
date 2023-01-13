@@ -17,6 +17,29 @@ main{
   box-shadow: 2px 2px 5px 2px rgba(0, 0, 0, 0.25);
 }
 
+/* -------------------- Responsibilidade das sessões -------------------- */
+
+main section.col2{
+  display: flex;
+  margin: 0 5% 30px 5%;
+  gap: 5%;
+  flex-wrap: wrap;
+}
+main section.col2:last-of-type{
+  margin: 0 5% 0 5%;
+}
+main section.col2 section{
+  flex-basis: 46%;
+  flex-grow: 1;
+  margin-bottom: 30px;
+}
+main section.col2 section:last-of-type{
+  margin: 0;
+}
+main section.col2 > *:not(section){
+  flex-grow: 2;
+}
+
 /* -------------------- QUEBRA 1 -------------------- */
 @media only screen and (max-width: 767px){
   body{
@@ -24,6 +47,12 @@ main{
   }
   main{
     width: 100%;
+  }
+  main > article > section{
+    flex-direction: column;
+  }
+  main section.col2 section{
+/*     margin-bottom: 15px; */
   }
 }
 
@@ -48,5 +77,8 @@ main{
     width: 1150px;
     padding-top: 30px;
     padding-bottom: 30px;
+  }
+  main > article > section > section{
+    width: 46%;
   }
 }

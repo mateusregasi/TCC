@@ -72,6 +72,7 @@ class Usuario{
 	public function getTelefone(){ return $this->telefone; }
 	public function getTipoUsuario(){ return $this->tipoUsuario; }
 	public function getNome(){ return $this->nome; }
+  public function getNomeURI(){ return urldecode(str_replace(' ', '', $this->nome)); }
   public function getCodUsuario(){ return $this->codUsuario; }
   
   public function insert(){

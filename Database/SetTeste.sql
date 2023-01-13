@@ -6,11 +6,11 @@ insert into Laboratorio(sigla) values ("Lab1"), ("Lab2"), ("Lab3");
 
 insert into tipoUsuario(nome) values ("Professor"), ("Administrador");
 
-insert into Usuario(nome, email, senha, telefone, tipoUsuario) values ("Usuario 1", "usuario1@gmail.com", "usuario123", "21 9999-99990", 1), ("Usuario 2", "usuario2@gmail.com", "usuario123", "21 9999-99990", 1), ("Usuario 3", "usuario3@gmail.com", "usuario123", "21 9999-99990", 2), ("Usuario 4", "usuario4@gmail.com", "usuario123", "21 9999-99990", 2);
+insert into Usuario(nome, email, senha, telefone, tipoUsuario) values ("Usuario 1", "usuario1@gmail.com", "usuario123", "21 9999-99990", 1), ("Usuario 2", "usuario2@gmail.com", "usuario123", "21 9999-99990", 1), ("Usuario 3", "usuario3@gmail.com", "usuario123", "21 9999-99990", 2), ("Usuario 4", "usuario4@gmail.com", "usuario123", "21 9999-99990", 2), ("Usuario 5", "usuario5@gmail.com", "usuario123", "21 9999-99990", 1), ("Usuario 6", "usuario6@gmail.com", "usuario123", "21 9999-99990", 1), ("Usuario 7", "usuario7@gmail.com", "usuario123", "21 9999-99990", 1), ("Usuario 8", "usuario8@gmail.com", "usuario123", "21 9999-99990", 1);
 
 insert into Categoria(nome) values ("Ferramenta"), ("Vegetal"), ("Derivado Animal"), ("Carne"); 
 
-insert into Material(nome, quantidade, categoria) values ("Ovo", 50, 3), ("Faca", 50, 1), ("Carne de Coelho", 50, 4), ("Couve", 50, 2);
+insert into Material(nome, quantidade, categoria) values ("Ovo", 50, 3), ("Faca", 51, 1), ("Carne de Coelho", 52, 4), ("Couve", 53, 2);
 
 insert into Alimento(material, unidade, dataLote, dataValidade) values (1, "uni", "23-09-2022", "23-09-2022"), (3, "kg", "23-09-2022", "23-09-2022"), (4, "kg", "23-09-2022", "23-09-2022");
 

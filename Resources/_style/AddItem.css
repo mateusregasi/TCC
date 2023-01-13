@@ -7,9 +7,6 @@
 @import '_components/Button.css';
 @import '_components/ButtonSubmit.css';
 
-
-
-
 *{
   margin: 0px;
   padding: 0px;
@@ -17,11 +14,10 @@
 
 
 body > main{
-  align-items: center;
 }
 
 
-fieldset{
+/* fieldset{
   border: 3px solid var(--cor1);
   margin-bottom: 10px;
   width: 50%;
@@ -105,3 +101,4 @@ button{
   color: var(--cor4);
   border: none;
 }
+ */

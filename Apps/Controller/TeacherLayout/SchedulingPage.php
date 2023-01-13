@@ -3,7 +3,7 @@
 require_once __DIR__ . "/../../Utils/View.php";
 require_once __DIR__ . "/../../Entities/Usuario.php";
 require_once __DIR__ . "/../../Entities/Laboratorio.php";
-// require_once __DIR__ . "/../PageComponents/Materiais.php";
+require_once __DIR__ . "/../../Entities/Material.php";
 
 class SchedulingPage{
   public static function getTeacherOptions(){
@@ -30,12 +30,25 @@ class SchedulingPage{
             
     return $lines;
   }
+  
+  public static function getMaterialOptions(){
+    $lines = '';
+    $mats = Material::get();
+
+    foreach($mats as $mat){
+      $lines .= '<option value="' . $mat->getCodMaterial() . '">' . $mat->getNome() . '</option>';
+    }
+            
+    return $lines;
+  }
+  
   public static function get(){
     return View::render('SchedulingPage', [
                         "navbar" => View::render("Navbar"),
                         "footer" => View::render("Footer"),
                         'teacher-options' => self::getTeacherOptions(),
-                        'lab-options' => self::getLabOptions()
+                        'lab-options' => self::getLabOptions(),
+                        'mat-options' => self::getMaterialOptions()
     ]);
   }
 }

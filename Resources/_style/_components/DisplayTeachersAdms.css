@@ -1,0 +1,16 @@
+.display-teachers-adms > ul{
+  list-style-type: none;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.display-teachers-adms > ul > li{
+  border: 5px solid var(--cor1);
+  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.25);
+  border-radius: 30px;
+  margin-inline: 30px;
+  margin-bottom: 20px;
+  padding: 50px;
+  font-family: var(--adventfont); 
+}

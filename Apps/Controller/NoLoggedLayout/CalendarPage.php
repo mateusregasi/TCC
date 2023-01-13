@@ -1,13 +1,15 @@
 <?
 require_once __DIR__ . "/../../Utils/View.php";
 require_once __DIR__ . "/../PageComponents/Calendar.php";
+require_once __DIR__ . "/NoLoggedLayout.php";
 
-class CalendarPage{
+class CalendarPage extends NoLoggedLayout{
   static function get($request = ''){
-    return View::render("CalendarPage" , [
-                        "navbar" => View::render("Navbar"),
+
+    $title = 'Calendário';
+    
+    return parent::getPage(View::render("CalendarPage" , [
                         "calendar" => Calendar::getCalendar($request),
-                        "footer" => View::render("Footer")
-    ]);
+    ]), 'Calendário', $title);
   }
 }

@@ -5,6 +5,7 @@ class View{
   static function init($vars = []){
     self::$vars = $vars;
   }
+  public static function getVars(){ return self::$vars; }
   private function getViewContent($view){
     $path = __DIR__ . "/../../Views";
     $dirs = array_diff(scandir($path), ["..", "."]);
