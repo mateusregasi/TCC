@@ -10,16 +10,32 @@ foreach($dirs as $dir){
 
 require_once __DIR__ . "/../Apps/Http/Response.php";
 
+
+/* -------------- NO LOGGED ----------------*/
 $router->get("/", [
              function(){
                return new Response(200, HomePage::get());
              }
 ]);
-
 $router->get("/calendario", [
              function(){
                return new Response(200, CalendarPage::get());
              }
+]);
+$router->get("/login", [
+             function(){
+               return new Response(200, LoginPage::get());
+             }
+]);
+$router->post("/login", [
+  function($request){
+   return new Response(200, LoginPage::get($request));
+  }
+]);
+$router->get("/aulas", [
+  function($request){
+   return new Response(200, ClassPage::get($request));
+  }
 ]);
 
 $router->get("/agendamento", [
@@ -40,17 +56,8 @@ $router->post("/calendario", [
 ]);
 
 # Usuários
-$router->get("/login", [
-             function(){
-               return new Response(200, LoginPage::get());
-             }
-]);
 
-$router->post("/login", [
-  function($request){
-   return new Response(200, LoginPage::get($request));
-  }
-]);
+
 $router->get("/cadastrar-usuario", [
   function(){
    return new Response(200, RegisterUserPage::get());

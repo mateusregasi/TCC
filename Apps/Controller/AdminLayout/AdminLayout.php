@@ -7,7 +7,7 @@ class AdminLayout{
   public static function getPage($content, $title, $tab){
 
     $args = [
-      'navbar' => Navbat::get('Navbar', [
+      'navbar' => Navbar::get([
         'Estoque' => [
           'Itens' => '/admin/gerenciar-itens',
           'Adicionar item' => '/admin/adicionar-item'

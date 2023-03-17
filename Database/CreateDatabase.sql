@@ -6,9 +6,10 @@ create table Usuario(
   codUsuario integer not null primary key,
   nome varchar(100) not null,
   email varchar(100) not null unique,
-  senha varchar(14) not null,
+  senha varchar(255) not null,
   matricula varchar(11) unique,
   telefone varchar(15),
+  deletado boolean default false,
   tipoUsuario integer not null,
   constraint usuario_fk_tipoUsuario foreign key(tipoUsuario) references tipoUsuario(codTipoUsuario)
 );
@@ -31,6 +32,7 @@ create table Laboratorio(
 );
 create table Aula(
   codAula integer primary key,
+  titulo varchar(100) not null,
   horario time not null,
   laboratorio integer not null,
   turma integer not null,

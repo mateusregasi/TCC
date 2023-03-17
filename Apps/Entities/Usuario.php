@@ -12,6 +12,7 @@ class Usuario{
 	private $senha = '';
 	private $matricula = '';
 	private $telefone = '';
+	private $deletado = '';
   private $tipoUsuario = '';
 	public function __construct($nome = "", $email = "", $senha = "", $matricula = "", $telefone = "", $tipoUsuario = ""){
 		$this->setNome($nome);
@@ -34,10 +35,12 @@ class Usuario{
     } else return false;
   }
   public function setSenha($senha){
-    if(!empty($senha) and validatePassword($senha)){
-      $this->senha = $senha;
-      return true;
-    } else return false;
+    $this->senha = password_hash($senha);
+    return true;
+    // if(!empty($senha) and validatePassword($senha)){
+    //   $this->senha = $senha;
+    //   return true;
+    // } else return false;
   }
   public function setMatricula($matricula){
     if(!empty($matricula)){
@@ -71,6 +74,7 @@ class Usuario{
 	public function getEmail(){ return $this->email; }
 	public function getTelefone(){ return $this->telefone; }
 	public function getTipoUsuario(){ return $this->tipoUsuario; }
+	public function getDeletado(){ return $this->deletado; }
 	public function getNome(){ return $this->nome; }
   public function getNomeURI(){ return urldecode(str_replace(' ', '', $this->nome)); }
   public function getCodUsuario(){ return $this->codUsuario; }
@@ -116,5 +120,11 @@ class Usuario{
   public static function delete($id){ 
     $bd = new Database('Usuario');
     $bd->delete('codUsuario=' . $id);
+  }
+  public static function hideUser($id){
+	  $bd = new Database('Usuario');
+    $bd->update('codUsuario=' . $id, [
+      'deletado' => 'true'
+    ]);
   }
 }

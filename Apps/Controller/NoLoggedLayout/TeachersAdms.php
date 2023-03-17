@@ -9,7 +9,7 @@
       $item = "";
 
       foreach($profs as $prof){
-        $item .= "<li>" . $prof -> getNome() . "<br>" . $prof -> getEmail() . "<br>" . $prof -> getTelefone() . "</li>";
+        $item .= "<li><img href='/Resources/_img/no-logged-img.svg'><div>" . $prof -> getNome() . "<br>" . $prof -> getEmail() . "<br>" . $prof -> getTelefone() . "</div></li>";
       }
 
       return $item;
@@ -20,7 +20,7 @@
       $item = "";
 
       foreach($adms as $adm){
-        $item .= "<li>" . $adm -> getNome() . "<br>" . $adm -> getEmail() . "<br>" . $adm -> getTelefone() . "</li>";
+        $item .= "<li><div class='img-prf'></div><div>" . $adm -> getNome() . "<br>" . $adm -> getEmail() . "<br>" . $adm -> getTelefone() . "</div></li>";
       }
 
       return $item;

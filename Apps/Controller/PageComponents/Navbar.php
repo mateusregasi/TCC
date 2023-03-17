@@ -17,21 +17,21 @@ class Navbar{
 
         $countNav++;
         
-        $nav .=  '<li id="nav-dropdown' . $countNav . '">' . $tab  . '<ul';
+        $nav .=  '<li id="nav-dropdown' . $countNav . '"><span>' . $tab  . '</span><ul';
         $nav .=  ($tab == $active) ? ' class="nav-active"' : '';
         $nav .=  '>';
 
         foreach($content as $name => $link){
           $nav .= '<li><a href="' . $link . '">' . $name . '</a></li>';
-        }
+        } 
 
-        $nav .= '</ul><li>';
+        $nav .= '</ul></li>';
 
       # Se for uma aba de menu normal
       } else{
         
         $nav .= '<li';
-        $nav .= $tab != $active ? ' class="nav-active"' : '';
+        $nav .= $tab == $active ? ' class="nav-active"' : '';
         $nav .= '><a href="' . $content . '">' . $tab . '</a></li>';
       }
     }
@@ -44,7 +44,7 @@ class Navbar{
       break;
       
       case 'Logged':
-        $icon = '<a href="/usuario/' . 'nome' . '"><p>Sair</p><img src="/Resources/_img/leave.png"></a>';
+        // $icon = '<a href="/usuario/' . 'nome' . '"><p>Sair</p><img src="/Resources/_img/leave.png"></a>';
         $icon .= '<a href="' . View::getVars()['logout-url'] . '"><p>Sair</p><img src="/Resources/_img/leave.png"></a>';
       break;
       

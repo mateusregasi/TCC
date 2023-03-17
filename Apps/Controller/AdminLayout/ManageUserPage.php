@@ -5,11 +5,11 @@ require_once __DIR__ . "/../../Entities/Usuario.php";
 require_once __DIR__ . "/../../Entities/TipoUsuario.php";
 require_once __DIR__ . "/../../Bd/Database.php";
 
-class ManageUserPage{
+class ManageUserPage extends AdminLayout{
   public static function getUsers(){
     
     # Pega os usuários
-    $users = Usuario::get();
+    $users = Usuario::get("*", 'deletado = false');
     
     # Monta as linhas da tabela baseadas nos usuarios
     $lines = '';
@@ -28,10 +28,10 @@ class ManageUserPage{
   }
   
   public static function deleteUser($request){
-    Usuario::delete($request->getPostVars()['delete']);
+    Usuario::hideUser($request->getPostVars()['delete']);
   }
   
-  public static function get($request){
+  public static function get($request = ''){
 
     # Se tiver uma requisição para deletar
     if(isset($request->getPostVars()['delete'])) self::deleteUser($request);
@@ -43,6 +43,6 @@ class ManageUserPage{
       'users' => self::getUsers()
     ];
 
-    return View::render('ManageUserPage', $vars);
+    return parent::getPage(View::render('ManageUserPage', $vars), 'Usuarios', 'Gerenciar usuarios');
   }
 }

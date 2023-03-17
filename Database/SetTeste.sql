@@ -14,6 +14,6 @@ insert into Material(nome, quantidade, categoria) values ("Ovo", 50, 3), ("Faca"
 
 insert into Alimento(material, unidade, dataLote, dataValidade) values (1, "uni", "23-09-2022", "23-09-2022"), (3, "kg", "23-09-2022", "23-09-2022"), (4, "kg", "23-09-2022", "23-09-2022");
 
-insert into Aula(horario, laboratorio, turma, quantAlunos, dataAula, professor) values ("07:00:00", 1, 1, 30, "23-09-2022", 1), ("08:30:00", 1, 2, 30, "23-09-2022", 2), ("09:20:00", 1, 3, 30, "23-09-2022", 3);
+insert into Aula(titulo, horario, laboratorio, turma, quantAlunos, dataAula, professor) values ("Oi1", "07:00:00", 1, 1, 30, "23-09-2022", 1), ("Oi2", "08:30:00", 1, 2, 30, "23-09-2022", 2), ("Oi3", "09:20:00", 1, 3, 30, "23-09-2022", 2);
 
 insert into MateriaisAula(codMaterial, codAula, quantidadeUtilizada) values (1, 1, 10), (2, 1, 30), (3, 1, 10);

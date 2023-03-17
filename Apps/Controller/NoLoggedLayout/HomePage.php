@@ -7,6 +7,9 @@ class HomePage extends NoLoggedLayout{
 
     $title = 'Página Inicial';
     
-    return parent::getPage(View::render("HomePage"), $title, 'Home');
+    return parent::getPage(
+      View::render("HomePage"), 
+      $title, 
+      'Home');
   }
 }

@@ -6,15 +6,9 @@ require_once __DIR__ . '/Laboratorio.php';
 require_once __DIR__ . '/Turma.php';
 require_once __DIR__ . '/Usuario.php';
 
-// create table Aula(
-//   dataAula date not null,
-//   constraint turma_fk_aula foreign key(turma) references Turma(codTurma),
-//   constraint professor_fk_aula foreign key(professor) references Usuario(codUsuario),
-//   constraint laboratorio_fk_aula foreign key(laboratorio) references Laboratorio(codLaboratorio)
-// );
-
 class Aula{
   private $codAula;
+  private $titulo = ''; 
   private $horario = ''; // Time
   private $laboratorio = '';
   private $turma = ''; //fk
@@ -22,20 +16,28 @@ class Aula{
   private $quantAlunos = '';
   private $dataAula = ''; //date
 
-  public function __construct($horario = '', 
+  public function __construct($titulo = '',
+                             $horario = '', 
                              $laboratorio = '',
                              $turma = '',
                              $professor = '',
                              $quantAlunos = '',
                              $dataAula = ''){
+    $this->setTitulo($titulo);
     $this->setHorario($horario);
     $this->setLaboratorio($laboratorio);
     $this->setTurma($turma);
     $this->setProfessor($professor);
     $this->setQuantAlunos($quantAlunos);
-    $this->setDataAula($dataAula);;
+    $this->setDataAula($dataAula);
   }
 
+  public function setTitulo($titulo){
+    if(!empty($titulo) and validateLength($titulo, 100)){
+      $this->titulo = $titulo;
+      return true;
+    } else return false;
+  }
   public function setHorario($horario){
     if(!empty($horario) and validateTime($horario)){
       $this->horario = $horario;
@@ -94,6 +96,7 @@ class Aula{
   public function setMateriaisAula($materiaisAula){
   }
   
+  public function getTitulo() { return $this -> titulo; } 
   public function getQuantAlunos() { return $this -> quantAlunos; } 
   public function getLaboratorio() { return $this -> laboratorio; }
   public function getDataAula() { return $this -> dataAula; }
@@ -105,7 +108,7 @@ class Aula{
   public static function get($where = NULL, $order = NULL,
                              $limit = NULL, $fields = '*'){
     $aulas = (new Database('Aula'))->select($fields, $where, $order, $limit)
-														->fetchAll(PDO::FETCH_CLASS, self::class);
+														->fetchAll(PDO::FETCH_CLASS, self::class);    
     return array_map(function($aula){
         $aula->setLaboratorio($aula->getLaboratorio());
         $aula->setProfessor($aula->getProfessor());

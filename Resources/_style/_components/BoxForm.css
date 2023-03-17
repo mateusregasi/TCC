@@ -72,6 +72,7 @@ main{
 }
 #box-form > div > input{
   width: 100%;
+  border: var(--cor3) solid 3px;
 }
 
 .error{
@@ -84,14 +85,14 @@ main{
 @media only screen and (max-width: 767px){
   main{
     width: 100%;
-    transform: translate(0, 0);
+    height: calc(100% - 110px);
     border-radius: 0;
     border: none;
   }
   header, footer, main,
   #box-form,
   #box-form > h2{
-    position: static;
+    position: absolute;
   }
   #box-form > div > label{
     width: 100%;
@@ -102,7 +103,7 @@ main{
     margin-left: auto;
     margin-right: auto;
   }
-  #box-form > input, #box-form > button{
+  #box-form > div > input, #box-form > button{
     font-size: 1.5em;
     border-radius: 0;
   }
